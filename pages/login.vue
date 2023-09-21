@@ -80,9 +80,14 @@ export default {
           password: this.password,
         }),
       }).then((res) => res.json())
-     
-      console.log('============>',result.token)
-      localStorage.setItem('userinfo', JSON.stringify(result.token))
+      
+      if(result.message=='Invalid credentials'){
+        alert('You have wrong credentials')
+      }
+      else{
+              localStorage.setItem('userinfo', JSON.stringify(result.token))
+      }
+
       await this.$router.push('/')
       
     },
