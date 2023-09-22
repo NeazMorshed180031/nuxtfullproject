@@ -7,6 +7,8 @@
           <li><NuxtLink to="/">Home</NuxtLink></li>
           <li><NuxtLink to="/about">About</NuxtLink></li>
           <li><NuxtLink to="/products" class="btn">Merch</NuxtLink></li>
+          <li><NuxtLink to="/login" class="btn bg-red-700" @click="logout">Logout</NuxtLink></li>
+   
         </ul>
       </nav>
     </header>
@@ -16,8 +18,16 @@
   </div>
 </template>
 
+
 <style scoped>
   .router-link-exact-active {
-    color: #12b488;
+    color: #eff5f3;
   }
 </style>
+<script setup>
+function logout(){
+console.log('Hello')
+localStorage.removeItem('userinfo')
+}
+
+</script>
